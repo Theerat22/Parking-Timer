@@ -7,6 +7,7 @@ import {
   configurationError,
 } from "./supabase/server";
 import { databaseProblem } from "./supabase/config";
+import { originDecision } from "./origins";
 export class ApiError extends Error {
   constructor(
     public status: number,
@@ -19,11 +20,14 @@ export function hashToken(token: string) {
   return createHash("sha256").update(token).digest("hex");
 }
 export function checkOrigin(request: Request) {
-  const origin = request.headers.get("origin");
-  const expected = process.env.APP_ORIGIN;
-  if (!expected) throw new ApiError(503, "ยังไม่ได้ตั้งค่า APP_ORIGIN");
-  if (origin !== new URL(expected).origin)
-    throw new ApiError(403, "คำขอไม่ถูกต้อง กรุณาเปิดเว็บใหม่แล้วลองอีกครั้ง");
+  const decision = originDecision(request.headers.get("origin"), process.env);
+  if (decision === "unconfigured")
+    throw new ApiError(503, "ยังไม่ได้ตั้งค่า APP_ORIGIN หรือโดเมน Vercel");
+  if (decision === "rejected")
+    throw new ApiError(
+      403,
+      "โดเมนเว็บไม่ตรงกับการตั้งค่าเซิร์ฟเวอร์ กรุณาตรวจ APP_ORIGIN บน hosting แล้ว deploy ใหม่",
+    );
 }
 export async function authenticate(request: Request, allowToken = false) {
   if (!isConfigured())

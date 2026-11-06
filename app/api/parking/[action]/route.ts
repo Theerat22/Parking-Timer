@@ -1,11 +1,7 @@
 import { ApiError, authenticate, rpcCommand, run } from "@/lib/api";
-import {
-  calculateParking,
-  clock,
-  duration,
-  money,
-  type ParkingSession,
-} from "@/lib/parking";
+import type { ParkingSession } from "@/lib/parking";
+import { parkingMessage } from "@/lib/speech";
+import { validateRequestId } from "@/lib/idempotency";
 export const runtime = "nodejs";
 async function handle(
   request: Request,
@@ -18,37 +14,21 @@ async function handle(
     if ((action === "status") !== (request.method === "GET"))
       throw new ApiError(405, "วิธีเรียกคำสั่งไม่ถูกต้อง");
     const identity = await authenticate(request, true);
-    const key = request.headers.get("idempotency-key");
-    if (action !== "status" && (!key || !/^[a-zA-Z0-9_-]{16,128}$/.test(key)))
-      throw new ApiError(
-        400,
-        "กรุณาระบุ Idempotency-Key ความยาว 16–128 ตัวอักษร",
-      );
+    const validation =
+      action === "status"
+        ? { key: null, error: null }
+        : validateRequestId(
+            request.headers.get("idempotency-key"),
+            request.headers.has("idempotency"),
+          );
+    if (validation.error) throw new ApiError(400, validation.error);
+    const key = validation.key;
     const result = (await rpcCommand(identity, action, {}, key)) as {
       state: string;
       session: ParkingSession | null;
       server_time: string;
     };
-    const row = result.session;
-    let message = "ยังไม่มีรายการที่กำลังจอด";
-    if (row) {
-      const p = calculateParking(
-        row.started_at,
-        row.ended_at ?? result.server_time,
-        row.free_minutes,
-        row.hourly_rate_satang,
-        row.billing_model,
-      );
-      if (action === "start")
-        message =
-          result.state === "already_active"
-            ? `คุณกำลังจอดรถอยู่ เริ่มเวลา ${clock(row.started_at)} น.`
-            : `เริ่มบันทึกเวลาจอดรถแล้ว เวลา ${clock(row.started_at)} น.`;
-      else if (action === "stop")
-        message = `สิ้นสุดการจอดแล้ว รวม ${duration(p.elapsedMs)} ค่าจอด ${money(row.cost_satang ?? p.costSatang)} บาท`;
-      else
-        message = `จอดไป ${duration(p.elapsedMs)} ค่าจอด ${money(p.costSatang)} บาท`;
-    }
+    const message = parkingMessage(action, result);
     return { ok: true, ...result, message };
   });
 }

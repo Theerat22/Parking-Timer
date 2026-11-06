@@ -1,5 +1,5 @@
 {
-  "checks": 23,
+  "checks": 24,
   "results": [
     "Single-owner status works without login",
     "Bearer status uses real handler and PostgreSQL",
@@ -12,6 +12,7 @@
     "Browser opens active parking directly without a login form",
     "No authentication cookie required",
     "Origin guard protects browser mutations",
+    "Same-origin stop reaches validation without changing active parking",
     "Reload restores active parking",
     "Browser stop persists and returns idle state",
     "Create token reveals secret once",

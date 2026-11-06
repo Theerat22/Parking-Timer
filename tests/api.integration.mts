@@ -240,7 +240,8 @@ try {
   });
   assert.equal(r.status, 200, JSON.stringify(r.data));
   assert.equal(r.data.state, "started");
-  assert.match(r.data.message, /เริ่มบันทึก/);
+  assert.match(r.data.message, /เริ่มบันทึก.*นาฬิกา.*นาที/);
+  assert.doesNotMatch(r.data.message, /ชม\.|น\./);
   const firstId = r.data.session.id;
   pass("Start returns Thai confirmation");
   const concurrent = await Promise.all(
@@ -258,6 +259,8 @@ try {
     "Idempotency-Key": "api-stop-request-001",
   });
   assert.equal(r.data.state, "stopped");
+  assert.match(r.data.message, /นาที.*บาท/);
+  assert.doesNotMatch(r.data.message, /ชม\.|น\./);
   r = await api("/api/parking/start", "POST", {
     ...bearer,
     "Idempotency-Key": "api-start-request-002",
@@ -301,6 +304,13 @@ try {
   });
   assert.equal(cross.status(), 403);
   pass("Origin guard protects browser mutations");
+  const originProbe = await page.request.post(base + "/api/parking/stop", {
+    headers: { Origin: base, "Idempotency-Key": "diagnostic" },
+  });
+  assert.equal(originProbe.status(), 400);
+  assert.equal((await commandCurrent()).id, newId);
+  pass("Same-origin stop reaches validation without changing active parking");
+
   // Seed only the in-memory test database for visual and history checks.
   await db.query(
     "update parking_sessions set started_at=now()-interval '3 days 1 hour',ended_at=now()-interval '3 days' where id=$1",

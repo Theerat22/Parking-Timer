@@ -29,7 +29,7 @@ POST ต้องมี `Idempotency-Key` ความยาว 16–128 ตั�
     "source": "shortcut"
   },
   "server_time": "2026-11-06T01:30:00.000Z",
-  "message": "เริ่มบันทึกเวลาจอดรถแล้ว เวลา 08:30 น."
+  "message": "เริ่มบันทึกเวลาจอดรถแล้ว เวลา 8 นาฬิกา 30 นาที"
 }
 ```
 
@@ -42,7 +42,7 @@ State: started, already_active, active, stopped, idle ถ้าไม่มี�
 - DELETE /api/history/:id → ลบเฉพาะรายการสิ้นสุดแล้ว
 - POST /api/tokens → สร้างโทเคน แสดง secret ในผลครั้งเดียว ปกติไม่เกิน 5 โทเคน active
 - DELETE /api/tokens/:id → เพิกถอน
-ทุก browser mutation ต้องมี `Origin` ตรง APP_ORIGIN ไม่เปิด CORS ข้าม origin ไม่มี session cookie หรือบัญชีผู้ใช้ API เลือกเจ้าของจากตาราง parking_owner ฝั่งเซิร์ฟเวอร์ Bearer token อ่าน/แก้ประวัติหรือสร้างโทเคนไม่ได้
+ทุก browser mutation ต้องมี `Origin` ตรง APP_ORIGIN หรือโดเมนโปรเจกต์จาก VERCEL_PROJECT_PRODUCTION_URL / VERCEL_URL / VERCEL_BRANCH_URL ไม่เปิด CORS ข้าม origin ไม่มี session cookie หรือบัญชีผู้ใช้ API เลือกเจ้าของจากตาราง parking_owner ฝั่งเซิร์ฟเวอร์ Bearer token อ่าน/แก้ประวัติหรือสร้างโทเคนไม่ได้
 
 ทุกคนที่เข้าถึงเว็บใช้ข้อมูลเดียวกัน Origin check ไม่ใช่การยืนยันตัวตนของผู้ใช้
 
@@ -59,3 +59,5 @@ State: started, already_active, active, stopped, idle ถ้าไม่มี�
 ## กติกาค่าจอดรุ่นปัจจุบัน
 
 รายการใหม่ใช้ hourly_step: ก่อน 120 นาที = 0 บาท, ที่ 120 = 20 บาท, ที่ 180 = 40 บาท, ที่ 240 = 60 บาท ฟิลด์ billing_model ระบุ snapshot ของแต่ละรายการ ค่า minute หมายถึงรายการเดิมก่อนอัปเดตและยังรักษาวิธีคิดเดิมไว้
+
+ฟิลด์ message ของคำสั่งจอดรถใช้คำเต็มสำหรับอ่านออกเสียง: ชั่วโมง, นาที, นาฬิกา, บาท และสตางค์ ไม่มี ชม. หรือ น. รูปแบบข้อมูลวันที่ UTC และฟิลด์ตัวเลขยังคงเดิม

@@ -42,7 +42,7 @@ npm run dev
 
 เว็บไม่มีด่านเข้าสู่ระบบ ผู้ที่เข้าถึง URL จะเห็นและจัดการข้อมูลชุดเดียวกัน ไม่ใช่ระบบแยกข้อมูลตามบัญชี ผู้ใช้ browser ไม่มีสิทธิ์เข้าตารางโดยตรง: เซิร์ฟเวอร์ใช้ service role และเลือก owner ที่บันทึกในฐานข้อมูล ไม่รับ owner ID จาก browser
 
-คำสั่งแก้ไขข้อมูลจาก browser ต้องมี Origin ตรง APP_ORIGIN เพื่อป้องกันคำขอข้ามเว็บไซต์ นี่ไม่ใช่การยืนยันตัวตนของคนเปิดเว็บ Siri ยังใช้โทเคนเฉพาะที่สร้างและเพิกถอนได้
+คำสั่งแก้ไขข้อมูลจาก browser ต้องมี Origin ตรง APP_ORIGIN หรือโดเมนของโปรเจกต์จากตัวแปรระบบ Vercel เพื่อป้องกันคำขอข้ามเว็บไซต์ นี่ไม่ใช่การยืนยันตัวตนของคนเปิดเว็บ Siri ยังใช้โทเคนเฉพาะที่สร้างและเพิกถอนได้
 
 ## นำขึ้น hosting
 
@@ -92,3 +92,9 @@ npm run test:api
 ```
 
 [ขอบเขตการทดสอบ](docs/TESTING.md) — การทดสอบ API ใช้ PostgreSQL ในเครื่องและจำลอง PostgREST ไม่ได้ทดสอบเสียง Siri บน iPhone จริง
+
+## ปุ่มเริ่ม–หยุดบน Vercel ตอบ 403
+
+ตั้ง `APP_ORIGIN=https://parking-timer-wheat.vercel.app` (หรือโดเมนจริงของคุณ) ใน Environment Variables ของ Production แล้ว Redeploy การเปลี่ยน environment จะไม่แก้ deployment ที่กำลังรันอยู่ทันที
+
+โค้ดรองรับ `VERCEL_PROJECT_PRODUCTION_URL`, `VERCEL_URL` และ `VERCEL_BRANCH_URL` เป็น origin ที่เชื่อถือได้เพิ่มเติมโดยอัตโนมัติ โดยไม่เชื่อถือ Host/Forwarded จากคำขอ และไม่อนุญาตโดเมน Vercel อื่นแบบ wildcard หากใช้ custom domain ที่ไม่ได้อยู่ในตัวแปรเหล่านี้ ให้ตั้ง APP_ORIGIN ให้ตรง

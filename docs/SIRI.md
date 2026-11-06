@@ -63,3 +63,13 @@
 แหล่งอ้างอิง:
 - [Request your first API](https://support.apple.com/guide/shortcuts/request-your-first-api-apd58d46713f/ios)
 - [Use Siri to run shortcuts with your voice](https://support.apple.com/guide/shortcuts/run-shortcuts-with-siri-apd07c25bb38/ios)
+
+## ข้อความสำหรับอ่านออกเสียง
+
+คำสั่งทั้งสามอ่านฟิลด์ `message` เดิมได้ ไม่ต้องแก้ Shortcut หลัง deploy โค้ดใหม่ ข้อความใช้คำเต็ม เช่น:
+
+- เริ่มบันทึกเวลาจอดรถแล้ว เวลา 8 นาฬิกา 30 นาที
+- จอดไป 4 ชั่วโมง 15 นาที ค่าจอด 60 บาท
+- สิ้นสุดการจอดแล้ว รวม 2 ชั่วโมง 1 นาที ค่าจอด 0 บาท 33 สตางค์ (รายการเดิมที่ใช้กติกาตามนาที)
+
+หน้าเว็บยังแสดงเวลาแบบกระชับได้ การปรับนี้เปลี่ยนเฉพาะข้อความตอบกลับของ API สำหรับเสียง
