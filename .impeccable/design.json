@@ -1,0 +1,497 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-06T17:14:07.693609+00:00",
+  "title": "Design System: Parking Timer",
+  "extensions": {
+    "colorMeta": {
+      "bg": {
+        "role": "neutral",
+        "displayName": "Bg",
+        "tonalRamp": [
+          "oklch(15.00% 0.0000 89.88)",
+          "oklch(26.43% 0.0000 89.88)",
+          "oklch(37.86% 0.0000 89.88)",
+          "oklch(49.29% 0.0000 89.88)",
+          "oklch(60.71% 0.0000 89.88)",
+          "oklch(72.14% 0.0000 89.88)",
+          "oklch(83.57% 0.0000 89.88)",
+          "oklch(95.00% 0.0000 89.88)"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Surface",
+        "tonalRamp": [
+          "oklch(15.00% 0.0041 337.35)",
+          "oklch(26.43% 0.0041 337.35)",
+          "oklch(37.86% 0.0041 337.35)",
+          "oklch(49.29% 0.0041 337.35)",
+          "oklch(60.71% 0.0041 337.35)",
+          "oklch(72.14% 0.0041 337.35)",
+          "oklch(83.57% 0.0041 337.35)",
+          "oklch(95.00% 0.0041 337.35)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "tonalRamp": [
+          "oklch(15.00% 0.0202 322.55)",
+          "oklch(26.43% 0.0202 322.55)",
+          "oklch(37.86% 0.0202 322.55)",
+          "oklch(49.29% 0.0202 322.55)",
+          "oklch(60.71% 0.0202 322.55)",
+          "oklch(72.14% 0.0202 322.55)",
+          "oklch(83.57% 0.0202 322.55)",
+          "oklch(95.00% 0.0202 322.55)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted",
+        "tonalRamp": [
+          "oklch(15.00% 0.0204 340.38)",
+          "oklch(26.43% 0.0204 340.38)",
+          "oklch(37.86% 0.0204 340.38)",
+          "oklch(49.29% 0.0204 340.38)",
+          "oklch(60.71% 0.0204 340.38)",
+          "oklch(72.14% 0.0204 340.38)",
+          "oklch(83.57% 0.0204 340.38)",
+          "oklch(95.00% 0.0204 340.38)"
+        ]
+      },
+      "accent": {
+        "role": "primary",
+        "displayName": "Accent",
+        "tonalRamp": [
+          "oklch(15.00% 0.1576 5.91)",
+          "oklch(26.43% 0.1576 5.91)",
+          "oklch(37.86% 0.1576 5.91)",
+          "oklch(49.29% 0.1576 5.91)",
+          "oklch(60.71% 0.1576 5.91)",
+          "oklch(72.14% 0.1576 5.91)",
+          "oklch(83.57% 0.1576 5.91)",
+          "oklch(95.00% 0.1576 5.91)"
+        ]
+      },
+      "accent-hover": {
+        "role": "primary",
+        "displayName": "Accent Hover",
+        "tonalRamp": [
+          "oklch(15.00% 0.1406 5.71)",
+          "oklch(26.43% 0.1406 5.71)",
+          "oklch(37.86% 0.1406 5.71)",
+          "oklch(49.29% 0.1406 5.71)",
+          "oklch(60.71% 0.1406 5.71)",
+          "oklch(72.14% 0.1406 5.71)",
+          "oklch(83.57% 0.1406 5.71)",
+          "oklch(95.00% 0.1406 5.71)"
+        ]
+      },
+      "pink": {
+        "role": "primary",
+        "displayName": "Pink",
+        "tonalRamp": [
+          "oklch(15.00% 0.0185 356.43)",
+          "oklch(26.43% 0.0185 356.43)",
+          "oklch(37.86% 0.0185 356.43)",
+          "oklch(49.29% 0.0185 356.43)",
+          "oklch(60.71% 0.0185 356.43)",
+          "oklch(72.14% 0.0185 356.43)",
+          "oklch(83.57% 0.0185 356.43)",
+          "oklch(95.00% 0.0185 356.43)"
+        ]
+      },
+      "green": {
+        "role": "secondary",
+        "displayName": "Green",
+        "tonalRamp": [
+          "oklch(15.00% 0.0840 167.20)",
+          "oklch(26.43% 0.0840 167.20)",
+          "oklch(37.86% 0.0840 167.20)",
+          "oklch(49.29% 0.0840 167.20)",
+          "oklch(60.71% 0.0840 167.20)",
+          "oklch(72.14% 0.0840 167.20)",
+          "oklch(83.57% 0.0840 167.20)",
+          "oklch(95.00% 0.0840 167.20)"
+        ]
+      },
+      "green-soft": {
+        "role": "secondary",
+        "displayName": "Green Soft",
+        "tonalRamp": [
+          "oklch(15.00% 0.0141 162.47)",
+          "oklch(26.43% 0.0141 162.47)",
+          "oklch(37.86% 0.0141 162.47)",
+          "oklch(49.29% 0.0141 162.47)",
+          "oklch(60.71% 0.0141 162.47)",
+          "oklch(72.14% 0.0141 162.47)",
+          "oklch(83.57% 0.0141 162.47)",
+          "oklch(95.00% 0.0141 162.47)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Line",
+        "tonalRamp": [
+          "oklch(15.00% 0.0102 345.43)",
+          "oklch(26.43% 0.0102 345.43)",
+          "oklch(37.86% 0.0102 345.43)",
+          "oklch(49.29% 0.0102 345.43)",
+          "oklch(60.71% 0.0102 345.43)",
+          "oklch(72.14% 0.0102 345.43)",
+          "oklch(83.57% 0.0102 345.43)",
+          "oklch(95.00% 0.0102 345.43)"
+        ]
+      },
+      "warning": {
+        "role": "secondary",
+        "displayName": "Warning",
+        "tonalRamp": [
+          "oklch(15.00% 0.1072 57.82)",
+          "oklch(26.43% 0.1072 57.82)",
+          "oklch(37.86% 0.1072 57.82)",
+          "oklch(49.29% 0.1072 57.82)",
+          "oklch(60.71% 0.1072 57.82)",
+          "oklch(72.14% 0.1072 57.82)",
+          "oklch(83.57% 0.1072 57.82)",
+          "oklch(95.00% 0.1072 57.82)"
+        ]
+      },
+      "warning-bg": {
+        "role": "secondary",
+        "displayName": "Warning Bg",
+        "tonalRamp": [
+          "oklch(15.00% 0.0237 73.61)",
+          "oklch(26.43% 0.0237 73.61)",
+          "oklch(37.86% 0.0237 73.61)",
+          "oklch(49.29% 0.0237 73.61)",
+          "oklch(60.71% 0.0237 73.61)",
+          "oklch(72.14% 0.0237 73.61)",
+          "oklch(83.57% 0.0237 73.61)",
+          "oklch(95.00% 0.0237 73.61)"
+        ]
+      },
+      "dark-bg": {
+        "role": "neutral",
+        "displayName": "Dark Bg",
+        "tonalRamp": [
+          "oklch(15.00% 0.0105 312.02)",
+          "oklch(26.43% 0.0105 312.02)",
+          "oklch(37.86% 0.0105 312.02)",
+          "oklch(49.29% 0.0105 312.02)",
+          "oklch(60.71% 0.0105 312.02)",
+          "oklch(72.14% 0.0105 312.02)",
+          "oklch(83.57% 0.0105 312.02)",
+          "oklch(95.00% 0.0105 312.02)"
+        ]
+      },
+      "dark-surface": {
+        "role": "neutral",
+        "displayName": "Dark Surface",
+        "tonalRamp": [
+          "oklch(15.00% 0.0124 314.60)",
+          "oklch(26.43% 0.0124 314.60)",
+          "oklch(37.86% 0.0124 314.60)",
+          "oklch(49.29% 0.0124 314.60)",
+          "oklch(60.71% 0.0124 314.60)",
+          "oklch(72.14% 0.0124 314.60)",
+          "oklch(83.57% 0.0124 314.60)",
+          "oklch(95.00% 0.0124 314.60)"
+        ]
+      },
+      "dark-ink": {
+        "role": "neutral",
+        "displayName": "Dark Ink",
+        "tonalRamp": [
+          "oklch(15.00% 0.0100 335.48)",
+          "oklch(26.43% 0.0100 335.48)",
+          "oklch(37.86% 0.0100 335.48)",
+          "oklch(49.29% 0.0100 335.48)",
+          "oklch(60.71% 0.0100 335.48)",
+          "oklch(72.14% 0.0100 335.48)",
+          "oklch(83.57% 0.0100 335.48)",
+          "oklch(95.00% 0.0100 335.48)"
+        ]
+      },
+      "dark-muted": {
+        "role": "neutral",
+        "displayName": "Dark Muted",
+        "tonalRamp": [
+          "oklch(15.00% 0.0212 330.73)",
+          "oklch(26.43% 0.0212 330.73)",
+          "oklch(37.86% 0.0212 330.73)",
+          "oklch(49.29% 0.0212 330.73)",
+          "oklch(60.71% 0.0212 330.73)",
+          "oklch(72.14% 0.0212 330.73)",
+          "oklch(83.57% 0.0212 330.73)",
+          "oklch(95.00% 0.0212 330.73)"
+        ]
+      },
+      "dark-accent": {
+        "role": "primary",
+        "displayName": "Dark Accent",
+        "tonalRamp": [
+          "oklch(15.00% 0.1092 358.40)",
+          "oklch(26.43% 0.1092 358.40)",
+          "oklch(37.86% 0.1092 358.40)",
+          "oklch(49.29% 0.1092 358.40)",
+          "oklch(60.71% 0.1092 358.40)",
+          "oklch(72.14% 0.1092 358.40)",
+          "oklch(83.57% 0.1092 358.40)",
+          "oklch(95.00% 0.1092 358.40)"
+        ]
+      },
+      "dark-accent-hover": {
+        "role": "primary",
+        "displayName": "Dark Accent Hover",
+        "tonalRamp": [
+          "oklch(15.00% 0.0724 357.90)",
+          "oklch(26.43% 0.0724 357.90)",
+          "oklch(37.86% 0.0724 357.90)",
+          "oklch(49.29% 0.0724 357.90)",
+          "oklch(60.71% 0.0724 357.90)",
+          "oklch(72.14% 0.0724 357.90)",
+          "oklch(83.57% 0.0724 357.90)",
+          "oklch(95.00% 0.0724 357.90)"
+        ]
+      },
+      "dark-pink": {
+        "role": "primary",
+        "displayName": "Dark Pink",
+        "tonalRamp": [
+          "oklch(15.00% 0.0343 348.00)",
+          "oklch(26.43% 0.0343 348.00)",
+          "oklch(37.86% 0.0343 348.00)",
+          "oklch(49.29% 0.0343 348.00)",
+          "oklch(60.71% 0.0343 348.00)",
+          "oklch(72.14% 0.0343 348.00)",
+          "oklch(83.57% 0.0343 348.00)",
+          "oklch(95.00% 0.0343 348.00)"
+        ]
+      },
+      "dark-green": {
+        "role": "secondary",
+        "displayName": "Dark Green",
+        "tonalRamp": [
+          "oklch(15.00% 0.0886 163.85)",
+          "oklch(26.43% 0.0886 163.85)",
+          "oklch(37.86% 0.0886 163.85)",
+          "oklch(49.29% 0.0886 163.85)",
+          "oklch(60.71% 0.0886 163.85)",
+          "oklch(72.14% 0.0886 163.85)",
+          "oklch(83.57% 0.0886 163.85)",
+          "oklch(95.00% 0.0886 163.85)"
+        ]
+      },
+      "dark-green-soft": {
+        "role": "secondary",
+        "displayName": "Dark Green Soft",
+        "tonalRamp": [
+          "oklch(15.00% 0.0343 165.08)",
+          "oklch(26.43% 0.0343 165.08)",
+          "oklch(37.86% 0.0343 165.08)",
+          "oklch(49.29% 0.0343 165.08)",
+          "oklch(60.71% 0.0343 165.08)",
+          "oklch(72.14% 0.0343 165.08)",
+          "oklch(83.57% 0.0343 165.08)",
+          "oklch(95.00% 0.0343 165.08)"
+        ]
+      },
+      "dark-line": {
+        "role": "neutral",
+        "displayName": "Dark Line",
+        "tonalRamp": [
+          "oklch(15.00% 0.0182 329.51)",
+          "oklch(26.43% 0.0182 329.51)",
+          "oklch(37.86% 0.0182 329.51)",
+          "oklch(49.29% 0.0182 329.51)",
+          "oklch(60.71% 0.0182 329.51)",
+          "oklch(72.14% 0.0182 329.51)",
+          "oklch(83.57% 0.0182 329.51)",
+          "oklch(95.00% 0.0182 329.51)"
+        ]
+      },
+      "dark-warning": {
+        "role": "secondary",
+        "displayName": "Dark Warning",
+        "tonalRamp": [
+          "oklch(15.00% 0.0966 70.38)",
+          "oklch(26.43% 0.0966 70.38)",
+          "oklch(37.86% 0.0966 70.38)",
+          "oklch(49.29% 0.0966 70.38)",
+          "oklch(60.71% 0.0966 70.38)",
+          "oklch(72.14% 0.0966 70.38)",
+          "oklch(83.57% 0.0966 70.38)",
+          "oklch(95.00% 0.0966 70.38)"
+        ]
+      },
+      "dark-warning-bg": {
+        "role": "secondary",
+        "displayName": "Dark Warning Bg",
+        "tonalRamp": [
+          "oklch(15.00% 0.0291 62.01)",
+          "oklch(26.43% 0.0291 62.01)",
+          "oklch(37.86% 0.0291 62.01)",
+          "oklch(49.29% 0.0291 62.01)",
+          "oklch(60.71% 0.0291 62.01)",
+          "oklch(72.14% 0.0291 62.01)",
+          "oklch(83.57% 0.0291 62.01)",
+          "oklch(95.00% 0.0291 62.01)"
+        ]
+      }
+    },
+    "shadows": [
+      {
+        "name": "selected-segment",
+        "value": "0 2px 6px #29212a0d",
+        "purpose": "Selected statistics segment only."
+      },
+      {
+        "name": "dialog",
+        "value": "0 20px 80px #0003",
+        "purpose": "Native modal elevation."
+      }
+    ],
+    "motion": [
+      {
+        "name": "button-color",
+        "value": "160ms ease-out",
+        "purpose": "Background and foreground changes."
+      },
+      {
+        "name": "guide-chevron",
+        "value": "150ms",
+        "purpose": "Expanded disclosure rotation."
+      },
+      {
+        "name": "loading",
+        "value": "1s linear infinite",
+        "purpose": "Loading spinner; disabled under reduced motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "wide-min",
+        "value": "1440px"
+      },
+      {
+        "name": "compact-max",
+        "value": "1150px"
+      },
+      {
+        "name": "tablet-max",
+        "value": "960px"
+      },
+      {
+        "name": "mobile-max",
+        "value": "760px"
+      },
+      {
+        "name": "narrow-phone-max",
+        "value": "370px"
+      }
+    ],
+    "rampNote": "Tonal ramps are synthesized preview metadata, not additional application tokens.",
+    "revision": {
+      "direction": "Open page surfaces; spacing, type hierarchy and dividers replace decorative boxes.",
+      "unboxed": [
+        "timer",
+        "status",
+        "setup",
+        "Siri intro and entry",
+        "history group",
+        "navigation selection",
+        "notices"
+      ],
+      "copy": "Remove repeated tariff, zone and explanatory subtitles. Cost label: ค่าจอด. Whole baht amounts omit decimal zeros.",
+      "billing": "New sessions: <120m free, at120m 20THB, at180m40THB, at240m60THB; saved legacy rules preserved."
+    }
+  },
+  "components": [
+    {
+      "name": "Primary action",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Primary action as implemented in the application.",
+      "html": "<button class=\"ds-button-primary\">เริ่มจอดรถ</button>",
+      "css": ".ds-button-primary{font-family:var(--font);transition:background-color .16s ease-out,color .16s ease-out;background:var(--accent);color:var(--bg);border:0;border-radius:12px;padding:12px 20px;min-height:48px;font-size:15px;font-weight:500;}.ds-button-primary:focus-visible{outline:3px solid var(--accent);outline-offset:4px}.ds-button-primary:hover:enabled{background:var(--accent-hover)}.ds-button-primary:disabled{opacity:.5;cursor:not-allowed}"
+    },
+    {
+      "name": "Secondary action",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Secondary action as implemented in the application.",
+      "html": "<button class=\"ds-button-secondary\">ยกเลิก</button>",
+      "css": ".ds-button-secondary{font-family:var(--font);transition:background-color .16s ease-out,color .16s ease-out;background:var(--surface);color:var(--ink);border:0;border-radius:12px;padding:12px 20px;min-height:48px;font-size:15px;font-weight:500;}.ds-button-secondary:focus-visible{outline:3px solid var(--accent);outline-offset:4px}.ds-button-secondary:hover:enabled{background:var(--pink)}.ds-button-secondary:disabled{opacity:.5}"
+    },
+    {
+      "name": "Text action",
+      "kind": "button",
+      "description": "Text action as implemented in the application.",
+      "html": "<button class=\"ds-text-action\">ดูทั้งหมด</button>",
+      "css": ".ds-text-action{font-family:var(--font);transition:background-color .16s ease-out,color .16s ease-out;background:transparent;color:var(--accent);border:0;padding:6px;min-height:44px;font-size:12px;}.ds-text-action:focus-visible{outline:3px solid var(--accent);outline-offset:4px}.ds-text-action:hover{text-decoration:underline}"
+    },
+    {
+      "name": "Input field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Input field as implemented in the application.",
+      "html": "<label>อีเมล <input class=\"ds-input\" type=\"email\" placeholder=\"you@example.com\"></label>",
+      "css": ".ds-input{font-family:var(--font);transition:background-color .16s ease-out,color .16s ease-out;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:9px;padding:9px 12px;min-height:44px;font-size:16px;}.ds-input:focus-visible{outline:3px solid var(--accent);outline-offset:4px}.ds-input::placeholder{color:var(--muted)}"
+    },
+    {
+      "name": "Free allowance badge",
+      "kind": "chip",
+      "description": "Free allowance badge as implemented in the application.",
+      "html": "<span class=\"ds-free-badge\">อยู่ในช่วงจอดฟรี</span>",
+      "css": ".ds-free-badge{font-family:var(--font);transition:background-color .16s ease-out,color .16s ease-out;display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--green);border-radius:0;padding:0;font-size:12px;}.ds-free-badge:focus-visible{outline:3px solid var(--accent);outline-offset:4px}"
+    },
+    {
+      "name": "Current navigation",
+      "kind": "nav",
+      "description": "Current navigation as implemented in the application.",
+      "html": "<nav><a class=\"ds-navigation\" href=\"#timer\" aria-current=\"page\">จับเวลา</a></nav>",
+      "css": ".ds-navigation{font-family:var(--font);transition:background-color .16s ease-out,color .16s ease-out;display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:12px;min-height:52px;color:var(--accent);background:transparent;font-weight:600;text-decoration:none;}.ds-navigation:focus-visible{outline:3px solid var(--accent);outline-offset:4px}.ds-navigation:hover{background:var(--surface)}"
+    },
+    {
+      "name": "Timer surface",
+      "kind": "card",
+      "description": "Timer surface as implemented in the application.",
+      "html": "<section class=\"ds-timer-panel\"><h2>เวลาจอดรถ</h2><p>00:00:00</p></section>",
+      "css": ".ds-timer-panel{font-family:var(--font);transition:background-color .16s ease-out,color .16s ease-out;background:transparent;color:var(--ink);border-radius:0;padding:12px 0 0;}.ds-timer-panel:focus-visible{outline:3px solid var(--accent);outline-offset:4px}.ds-timer-panel h2{font-size:17px;font-weight:500;text-align:center}.ds-timer-panel p{font-size:clamp(36px,4vw,56px);line-height:1.2;letter-spacing:-.03em;font-weight:500;font-variant-numeric:tabular-nums;text-align:center}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Quiet parking utility",
+    "overview": "Parking Timer adapts the user-pinned Figma screen 2:89 in file 2DI44d3YnJjiyhJCdxj4Aa to parking tasks; it does not reproduce the scam product. This authority supersedes unrelated concept directions. The interface is quiet, concise, and practical: white space, plum ink, rose actions, and soft semantic surfaces support Thai reading and quick operation.\n\nThe implemented world uses IBM Plex Sans with its Thai companion, Lucide outlines, gently rounded controls, and flat separation. Light and dark themes preserve the same semantic roles. No gradients, emoji, or decorative imagery are part of this system.",
+    "keyCharacteristics": [
+      "Concise Thai copy and legible bilingual typography.",
+      "Rose actions, green allowance states, and amber warnings.",
+      "Flat surfaces, rounded controls, and tabular time and money."
+    ],
+    "rules": [
+      {
+        "name": "The Semantic Pair Rule",
+        "body": "Keep foreground and soft-background roles paired when switching themes; use the matching `dark-` values rather than reusing light colors.",
+        "section": "colors"
+      },
+      {
+        "name": "The Stable Numbers Rule",
+        "body": "Use tabular numerals for elapsed time, costs, history amounts, and summary values so changing digits do not shift alignment.",
+        "section": "typography"
+      }
+    ],
+    "dos": [
+      "Do use the semantic CSS variables so light and dark themes stay paired.",
+      "Do use tabular numerals for time and money, and Lucide SVG icons.",
+      "Do preserve the responsive mobile content inset and concise Thai labels.",
+      "Do show text alongside semantic color and retain keyboard focus."
+    ],
+    "donts": [
+      "Don't use gradients, emoji, or decorative imagery.",
+      "Don't invent parking records to fill a live empty state.",
+      "Don't introduce an unrelated visual identity in place of the pinned Figma authority."
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "checks": 23,
+  "results": [
+    "Single-owner status works without login",
+    "Bearer status uses real handler and PostgreSQL",
+    "Idempotency key required",
+    "Start returns Thai confirmation",
+    "Concurrent HTTP starts keep one session",
+    "HTTP stop replay does not stop newer session",
+    "Scoped token denied bootstrap and token administration",
+    "Login API removed",
+    "Browser opens active parking directly without a login form",
+    "No authentication cookie required",
+    "Origin guard protects browser mutations",
+    "Reload restores active parking",
+    "Browser stop persists and returns idle state",
+    "Create token reveals secret once",
+    "Leaving Siri clears revealed secret",
+    "Mobile active screen has no horizontal overflow",
+    "Future history edits show an actionable validation error",
+    "Browser history edit persists and recalculates cost",
+    "Confirmed deletion removes record and refreshes history",
+    "Offline state disables mutations",
+    "Lost response retains request key across reload and retry creates no duplicate",
+    "No browser runtime errors",
+    "Revoked bearer rejected by real HTTP handler"
+  ],
+  "scope": "Real Next HTTP + PGlite PostgreSQL; locally emulated Supabase PostgREST. Synthetic screenshots only."
+}

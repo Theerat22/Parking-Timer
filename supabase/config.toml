@@ -1,0 +1,15 @@
+project_id = "parking-timer"
+[api]
+enabled = true
+port = 54321
+schemas = ["public", "graphql_public"]
+extra_search_path = ["public", "extensions"]
+max_rows = 1000
+[db]
+port = 54322
+major_version = 17
+[auth]
+enabled = true
+enable_signup = false
+[auth.email]
+enable_signup = false
